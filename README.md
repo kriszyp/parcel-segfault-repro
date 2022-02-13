@@ -2,8 +2,6 @@ Segfault whenever the dist directory doesn't exist yet. If caching is enabled,
 it'll segfault on the first run and sporadically afterward. Caching is disabled
 here to make the case easily reproducible.
 
-Reproduced on a 2021 Macbook (Apple M1, macOS Monterey 12.2.1).
-
 ```bash
 rm -rf dist
 npx parcel build --no-cache --no-content-hash src/index.html
@@ -36,4 +34,19 @@ PID 69840 received SIGSEGV for address: 0xb4f8
 13  libsystem_pthread.dylib             0x00000001a21fd240 _pthread_start + 148
 14  libsystem_pthread.dylib             0x00000001a21f8024 thread_start + 8
 Segmentation fault: 11
+```
+
+System info:
+
+```
+$ sw_vers
+ProductName:	macOS
+ProductVersion:	12.2.1
+BuildVersion:	21D62
+
+$ node --version
+v17.5.0
+
+$ npx parcel --version
+2.3.1
 ```
