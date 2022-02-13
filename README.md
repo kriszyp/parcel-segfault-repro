@@ -2,6 +2,8 @@ Segfault whenever the dist directory doesn't exist yet. If caching is enabled,
 it'll segfault on the first run and sporadically afterward. Caching is disabled
 here to make the case easily reproducible.
 
+Reproduced on a 2021 Macbook (Apple M1, macOS Monterey 12.2.1).
+
 ```bash
 rm -rf dist
 npx parcel build --no-cache --no-content-hash src/index.html
