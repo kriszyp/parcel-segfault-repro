@@ -1,4 +1,4 @@
-!# /bin/bash
+#! /bin/bash
 rm -rf .parcel-cache
 for (( i=1; i<3; i++))
 do
